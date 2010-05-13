@@ -1,0 +1,21 @@
+#
+# ~/.asoundrc
+#
+# Andrew Antle - http://antlechrist.org/
+#
+# Setup to use my usb headset as the default soundcard.
+# `cat /proc/asound/cards` to found out which is which.
+#
+# http://alsa-project.org/main/index.php/Asoundrc
+#
+
+pcm.!default {
+	type hw
+	card 1
+}
+
+ctl.!default {
+	type hw
+	card 1
+}
+

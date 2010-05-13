@@ -1,0 +1,16 @@
+#
+# ~/.ratpoisonrc
+#
+# Andrew Antle - http://antlechrist.org/
+#
+
+#
+# `C-t c` fires up rxvt-unicode.
+#
+definekey root c exec urxvt
+
+#
+# `C-t q` to quit ratpoison.
+#
+definekey root q quit
+

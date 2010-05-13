@@ -1,0 +1,55 @@
+background no
+use_xft no
+font -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_colour white
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+double_buffer yes
+minimum_size 475
+maximum_width 475
+draw_shades yes
+draw_outline no
+draw_graph_borders yes
+stippled_borders 8
+border_width 5
+default_color white
+default_shade_color black
+default_outline_color black
+alignment bottom_right
+gap_x 20
+gap_y 20
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale no
+use_spacer none
+
+## unused
+# :: ${execi 60 date '+%a %b %d %F :: %H:%M'}
+
+TEXT
+${alignc}${nodename} | ${sysname} ${kernel} | ${machine}
+${hr}
+uptime: ${uptime}
+ram:    ${mem} ${memperc}% ${alignr}${membar 8,250}
+cpu1:   ${cpu cpu1}% ${alignr}${cpubar cpu1 8,250}
+cpu2:   ${cpu cpu2}% ${alignr}${cpubar cpu2 8,250}
+ps:     ${processes} | running: ${running_processes}
+$hr
+/    ${fs_used /}/${fs_size /} ${alignr}${fs_bar 8,150 /}
+home ${fs_used /home}/${fs_size /home} ${alignr}${fs_bar 8,250 /home}
+${if_mounted /mnt/sdc1}sdc1 ${fs_used /mnt/sdc1}/${fs_size /mnt/sdc1} ${alignr}${fs_bar 8,250 /mnt/sdc1}${else}/dev/sdc1 is not mounted${endif}
+${if_mounted /mnt/sdc2}sdc2 ${fs_used /mnt/sdc2}/${fs_size /mnt/sdc2} ${alignr}${fs_bar 8,250 /mnt/sdc2}${else}/dev/sdc2 is not mounted${endif}
+${if_mounted /mnt/sdc3}sdc3 ${fs_used /mnt/sdc3}/${fs_size /mnt/sdc3} ${alignr}${fs_bar 8,250 /mnt/sdc3}${else}/dev/sdc3 is not mounted${endif}
+${if_mounted /mnt/sdc4}sdc4 ${fs_used /mnt/sdc4}/${fs_size /mnt/sdc4} ${alignr}${fs_bar 8,250 /mnt/sdc4}${else}/dev/sdc4 is not mounted${endif}
+$hr
+up  ${upspeed eth0} ${alignr}${downspeed eth0}  dn
+tup ${totalup eth0} ${alignr}${totaldown eth0} tdn
+${alignc}${addr eth0}
+$hr
+${execi 300 cat ~/.todo.txt}

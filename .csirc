@@ -1,0 +1,17 @@
+;
+; ~/.csirc
+;
+; Andrew Antle - http://antlechrist.org/
+;
+; Chicken initialization file | http://chicken.wiki.br/
+;
+; vim:ft=scheme:
+;
+
+;
+;; readline
+;
+(require 'readline 'regex)
+(current-input-port (make-gnu-readline-port))
+(gnu-history-install-file-manager (string-append (or (getenv "HOME") ".") "/.csi.history"))
+

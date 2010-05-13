@@ -1,0 +1,57 @@
+!
+! ~/.Xdefaults
+!
+! Andrew Antle - http://antlechrist.org/
+!
+
+!
+! Dress up the rat. :)
+!
+Xcursor.theme: Vanilla-DMZ
+
+!
+! Fancy fonts
+!
+!Xft.antialias: true
+!Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.rgba: rgb
+
+!
+! rxvt-unicode
+!
+urxvt*colorUL: #999999
+urxvt*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+urxvt*boldFont: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+urxvt*visualBell: false
+urxvt*scrollBar: false
+urxvt*termName: rxvt
+urxvt*pointerBlank: true
+urxvt*perl-lib: /usr/lib/urxvt/perl/
+urxvt*perl-ext-common: default,matcher
+urxvt*urlLauncher: /usr/bin/firefox
+! 1|2|3 = Left|Scroll|Right
+urxvt*matcher.button: 3
+
+!
+! Colors. This is nice because you can keep each theme in its own file, and
+! then just uncomment whichever one you feel like using.
+!
+!#include "/home/andrew/.colors/arthur"
+!#include "/home/andrew/.colors/bright"
+!#include "/home/andrew/.colors/dark"
+!#include "/home/andrew/.colors/erikl"
+!#include "/home/andrew/.colors/lich"
+!#include "/home/andrew/.colors/low"
+!#include "/home/andrew/.colors/milomouse"
+#include "/home/andrew/.colors/molokai"
+!#include "/home/andrew/.colors/old"
+!#include "/home/andrew/.colors/rab"
+!#include "/home/andrew/.colors/soft"
+!#include "/home/andrew/.colors/rezza"
+!#include "/home/andrew/.colors/vimbrant"
+!#include "/home/andrew/.colors/washed"
+!#include "/home/andrew/.colors/zenburn"
+

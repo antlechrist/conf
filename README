@@ -1,0 +1,39 @@
+
+README
+======
+
+Andrew Antle
+
+<http://antlechrist.org/>
+
+    <andrew at antlechrist dot org>
+
+
+Colors
+------
+
+    0  8 - black
+    1  9 - red
+    2 10 - green
+    3 11 - yellow
+    4 12 - blue
+    5 13 - magenta
+    6 14 - cyan
+    7 15 - white
+
+* 01 - 25, rezza:
+  <http://phraktured.net/terminal-colors/>
+* arthur, bright, dark, lich, low, milomouse, old, rab, soft, washed, zenburn:
+  <http://bitbucket.org/jasonwryan/workstation/src/tip/colours/>
+* molokai, vimbrant:
+  <http://git.cinderwick.ca/>
+
+
+Other configs of interest
+-------------------------
+
+* Aaron Griffin:   <http://phraktured.net/config/>
+* Chess Griffin:   <http://www.chessgriffin.com/files/config/>
+* Jason Ryan:      <http://bitbucket.org/jasonwryan>
+* Thayer Williams: <http://git.cinderwick.ca/>
+

@@ -1,0 +1,20 @@
+"
+" ~/.vimperatorrc
+"
+" Andrew Antle - http://antlechrist.org/
+"
+
+set runtimepath=/home/andrew/.vimperator
+" set complete=bSl
+set followhints=1
+set newtab=all
+set go-=rb
+set go+=mT
+" set! browser.tabs.autoHide=true
+" set! browser.tabs.closeButtons=2
+
+"
+" 0|1|2 = Never|If tab|Always
+"
+set showtabline=2
+

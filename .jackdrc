@@ -1,0 +1,8 @@
+#
+# ~/.jackdrc
+#
+# Andrew Antle - http://antlechrist.org/
+#
+
+/usr/bin/jackd -dalsa -dhw:1,0 -r48000 -p1024 -n2
+
