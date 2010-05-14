@@ -18,9 +18,9 @@ tmpfs       /dev/shm     tmpfs   defaults         0       0
 
 /dev/sda2   swap         swap    defaults         0       0
 /dev/sdb1   /            ext4    defaults         1       1
+/dev/sda4   /home        ext4    defaults         0       1
 
 /dev/sda3   /mnt/sda3    ext4    defaults         0       1
-/dev/sda4   /mnt/sda4    ext4    defaults         0       1
 
 /dev/sdc1   /mnt/sdc1    ext3    noauto,user      0       0
 /dev/sdc2   /mnt/sdc2    ext3    noauto,user      0       0
