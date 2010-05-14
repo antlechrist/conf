@@ -36,4 +36,3 @@ alias pSyu='sudo pacman -Syu'
 alias ps='ps -e'
 alias startx='startx -- -dpi 96'
 alias t="vim ~/.todo.txt"
-

@@ -41,4 +41,3 @@ exec dwm > ~/log/dwm 2>&1
 # xmonad
 #
 #exec xmonad > ~/log/xmonad 2>&1
-

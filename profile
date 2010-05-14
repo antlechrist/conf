@@ -117,4 +117,3 @@ unset profile_script
 if [ ! "`id -u`" = "0" ]; then
  PATH="$PATH:."
 fi
-

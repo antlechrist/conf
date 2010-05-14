@@ -13,4 +13,3 @@ definekey root c exec urxvt
 # `C-t q` to quit ratpoison.
 #
 definekey root q quit
-

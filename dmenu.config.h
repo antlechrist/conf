@@ -14,4 +14,3 @@ static const char *normfgcolor = "#999999";
 static const char *selbgcolor  = "#222222";
 static const char *selfgcolor  = "#aaaaaa";
 static unsigned int spaceitem  = 30; /* Number of pixels between menu items */
-

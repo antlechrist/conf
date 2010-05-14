@@ -17,4 +17,3 @@ set go+=mT
 " 0|1|2 = Never|If tab|Always
 "
 set showtabline=2
-

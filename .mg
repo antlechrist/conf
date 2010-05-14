@@ -25,4 +25,3 @@ auto-execute *.c c-mode
 # specify a backup directory like vim or emacs.
 #
 #make-backup-files
-

@@ -58,4 +58,3 @@ set list
 set nonumber
 set spelllang=en_us
 set nospell
-

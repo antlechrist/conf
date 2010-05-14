@@ -8,4 +8,3 @@ set showmode
 set noflash
 set autoindent
 set shiftwidth=2
-

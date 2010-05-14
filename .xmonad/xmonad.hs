@@ -91,4 +91,3 @@ defaults = defaultConfig { terminal           = terminal'
                          , logHook            = logHook'
                          , startupHook        = startupHook'
                          }
-

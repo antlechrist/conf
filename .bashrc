@@ -81,4 +81,3 @@ alias startx="startx -- -dpi 96"
 alias t="vi ~/.plan"
 alias tar="bsdtar"
 alias vi="/usr/local/bin/vim"  # The One True Editor
-

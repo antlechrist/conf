@@ -53,4 +53,3 @@
 ;; Define the message window font.
 ;
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
-

@@ -9,4 +9,3 @@
 eval `keychain --eval id_rsa`
 
 export ENV=$HOME/.kshrc
-
