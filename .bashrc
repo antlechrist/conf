@@ -1,7 +1,8 @@
 #
 # ~/.bashrc
 #
-# Andrew Antle - http://antlechrist.org/
+# author: Andrew Antle - http://antlechrist.org/
+#
 #
 
 #
@@ -23,19 +24,20 @@
 export DSSI_PATH=~/lib/dssi:/usr/lib/dssi
 export LADSPA_PATH=~/lib/ladspa:/usr/lib/ladspa
 export LV2_PATH=~/lib/lv2:/usr/lib/lv2
-export EDITOR=vi
+export EDITOR=mg
 export GOARCH=i386
 export GOBIN=~/go/bin
 export GOOS=linux
 export GOROOT=~/go
 export MANWIDTH=80
 export PATH_ANDY=~/bin:/usr/local/bin
+export PATH_CHKN=~/.chicken/bin
 export PATH_SLCK=/usr/games:/usr/share/texmf/bin
 export PLAN9=~/plan9
-export PATH=$PATH_ANDY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK:$PLAN9/bin
+export PATH=$PATH_ANDY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK:$PATH_CHKN:$PLAN9/bin
 
 #
-# Supposed firefox tweaks to speed it up. I didn't notice a difference.
+# Supposed firefox tweaks to speed it up. I didn't notice a difference
 #
 #export MOZ_DISABLE_PANGO=1
 #export FIREFOX_DSP=none
@@ -67,6 +69,7 @@ fi
 #
 alias amail="mail -f $AMAIL_MAILBOX"
 alias cd2="cd ../.."
+alias ei="mg"
 alias emacs="/usr/bin/emacs-22.3-no-x11"
 alias gmail="mail -f $GMAIL_MAILBOX"
 alias grep="grep --color=auto"
@@ -76,8 +79,6 @@ alias ll="ls -l"
 alias ls="ls -F --color=auto --group-directories-first"
 alias mem="free -m"
 alias mi="mid3v2"
-alias mutt="mutt -f ~/mail"
 alias startx="startx -- -dpi 96"
 alias t="vi ~/.plan"
 alias tar="bsdtar"
-alias vi="/usr/local/bin/vim"  # The One True Editor
