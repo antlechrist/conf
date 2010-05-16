@@ -13,7 +13,7 @@
 #
 # Source the private stuff.
 #
-# "I knew Colonel Sanders when he was just a Sargeant."
+# "I knew Colonel Sanders when he was just a Sergeant."
 # "Oh, I thought you only knew his privates." :)
 #
 . ~/.bashrc.private
