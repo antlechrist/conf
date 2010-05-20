@@ -9,3 +9,4 @@ set noflash
 set ruler
 set shell=/bin/sh
 set showmode
+set wrapmargin=78

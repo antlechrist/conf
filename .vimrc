@@ -31,26 +31,25 @@ if has('mouse')
   set mouse=a
 endif
 syntax on
-colorscheme default
+colorscheme molokai
 set hlsearch
 
-if has("autocmd")
-  filetype plugin indent on
-  augroup vimrcEx
-  au!
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType haskell setlocal tw=79 ts=2 sw=2 et
-  autocmd FileType html setlocal ts=2 sw=2 et
-  autocmd BufReadPost * " Remember where we left off in the file.
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-  augroup END
-else
-  set autoindent
-  set smartindent
-  set cindent
-endif
+filetype plugin indent on
+
+augroup vimrcEx
+au!
+autocmd FileType text setlocal textwidth=78
+autocmd FileType haskell setlocal tw=79 ts=2 sw=2 et
+autocmd FileType html setlocal ts=2 sw=2 et
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+augroup END
+
+"set autoindent
+"set smartindent
+"set cindent
 
 set noexpandtab
 set listchars=tab:>-

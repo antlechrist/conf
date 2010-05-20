@@ -1,12 +1,12 @@
 ;
 ; ~/.guile
 ;
+; vim:ft=scheme:
+;
 ; Andrew Antle - http://antlechrist.org/
 ;
 ; Guile initialization file | http://www.gnu.org/software/guile/
 ; Prefer Chicken! BSD licensed, not a GNUisance. http://chicken.wiki.br/
-;
-; vim:ft=scheme:
 ;
 
 ;

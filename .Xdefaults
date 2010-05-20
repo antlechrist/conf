@@ -25,6 +25,8 @@ Xft.hintstyle: hintslight
 urxvt*colorUL: #999999
 urxvt*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
 urxvt*boldFont: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+!urxvt.font:xft:DejaVu Sans Mono:pixelsize=13.5
+!urxvt.boldFont:xft:DejaVu Sans Mono:bold:pixelsize=13.5
 urxvt*visualBell: false
 urxvt*scrollBar: false
 urxvt*termName: rxvt
@@ -41,15 +43,16 @@ urxvt*matcher.button: 3
 !
 !#include "/home/andrew/.colors/arthur"
 !#include "/home/andrew/.colors/bright"
-#include "/home/andrew/.colors/bw"
+!#include "/home/andrew/.colors/bw"
 !#include "/home/andrew/.colors/dark"
 !#include "/home/andrew/.colors/erikl"
 !#include "/home/andrew/.colors/lich"
 !#include "/home/andrew/.colors/low"
-!#include "/home/andrew/.colors/malarkey"
+#include "/home/andrew/.colors/malarkey"
 !#include "/home/andrew/.colors/milomouse"
 !#include "/home/andrew/.colors/molokai"
 !#include "/home/andrew/.colors/old"
+!#include "/home/andrew/.colors/plan9"
 !#include "/home/andrew/.colors/rab"
 !#include "/home/andrew/.colors/soft"
 !#include "/home/andrew/.colors/rezza"
@@ -57,4 +60,3 @@ urxvt*matcher.button: 3
 !#include "/home/andrew/.colors/vimbrant"
 !#include "/home/andrew/.colors/washed"
 !#include "/home/andrew/.colors/zenburn"
-

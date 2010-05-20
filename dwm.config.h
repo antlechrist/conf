@@ -33,9 +33,12 @@ static const Rule rules[] = {
 static const float mfact      = 0.5;    /* Factor of master area size [0.05..0.95] */
 static const Bool resizehints = False;  /* True means respect size hints in tiled resizals */
 
+#include "bstack.c"
+
 static const Layout layouts[] = {
 	/* Symbol     Arrange function */
 	{ "[]=",      tile },     /* First entry is the default */
+	{ "TTT",      bstack },   /* Bottom stack */
 	{ "><>",      NULL },     /* No layout function means floating behavior */
 	{ "[M]",      monocle },  /* One full screen window at a time */
 };
@@ -59,7 +62,7 @@ static Key keys[] = {
 	/* Modifier                     Key        Function        Argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -68,8 +71,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_b,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
