@@ -1,7 +1,5 @@
-!*background: #1a1a1a
-!*foreground: #a1a1a1
-*background: #fffafa
-*foreground: #222222
+*background: #eeeeff
+*foreground: #000000
 
 ! black
 *color0:  #2E3436
@@ -16,11 +14,11 @@
 *color3:  #C4A000
 *color11: #FCE94F
 ! blue
-*color4:  #3465A4
-*color12: #729FCF
+*color4:  #3465a4
+*color12: #0000ee
 ! purple
-*color5:  #75507B
-*color13: #AD7FA8
+*color5:  #75507b
+*color13: #551a8b
 ! cyan
 *color6:  #06989A
 *color14: #34E2E2
