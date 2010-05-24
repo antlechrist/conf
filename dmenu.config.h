@@ -1,11 +1,6 @@
-/* 
- * dmenu/config.h
- *
+/* dmenu/config.h
  * Andrew Antle - http://antlechrist.org/
- *
- * See LICENSE file for copyright and license details.
- *
- */
+ * See LICENSE file for copyright and license details. */
 
 /* Appearance */
 static const char *font        = "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*";
