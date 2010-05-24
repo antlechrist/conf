@@ -5,7 +5,6 @@
 #
 # This file contains system-wide defaults used by all Bourne (and related)
 # shells.
-#
 
 #
 # Set the values for some environment variables.
@@ -93,7 +92,7 @@ umask 022
 #
 # "Gotta love ASCII art with figlet."
 #
-figlet -f smslant Slackware
+#figlet -f smslant Slackware
 
 #
 # Notify user of incoming mail. This can be overridden in the user's
@@ -117,3 +116,4 @@ unset profile_script
 if [ ! "`id -u`" = "0" ]; then
  PATH="$PATH:."
 fi
+

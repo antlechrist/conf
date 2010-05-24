@@ -26,3 +26,5 @@ tmpfs       /dev/shm     tmpfs   defaults         0       0
 /dev/sdc2   /mnt/sdc2    ext3    noauto,user      0       0
 /dev/sdc3   /mnt/sdc3    ext3    noauto,user      0       0
 /dev/sdc4   /mnt/sdc4    ext3    noauto,user      0       0
+
+/dev/sdd    /mnt/tmp     vfat    noauto,user      0       0

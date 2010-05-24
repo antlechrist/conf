@@ -1,46 +1,64 @@
-!
 ! ~/.Xdefaults
-!
 ! Andrew Antle - http://antlechrist.org/
-!
 
-!
-! Dress up the rat. :)
-!
-Xcursor.theme: Vanilla-DMZ
+Xcursor.theme:  Vanilla-DMZ
+Xcursor.size:   22
 
-!
-! Fancy fonts
-!
-!Xft.antialias: true
-!Xft.dpi: 96
-Xft.hinting: true
-Xft.hintstyle: hintslight
-!Xft.lcdfilter: lcddefault
-!Xft.rgba: rgb
+!Xft.antialias:  true
+!Xft.dpi:        96
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+!Xft.lcdfilter:  lcddefault
+!Xft.rgba:       rgb
 
-!
-! rxvt-unicode
-!
-urxvt*colorUL: #999999
-urxvt*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
-urxvt*boldFont: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
-!urxvt.font:xft:DejaVu Sans Mono:pixelsize=13.5
-!urxvt.boldFont:xft:DejaVu Sans Mono:bold:pixelsize=13.5
-urxvt*visualBell: false
-urxvt*scrollBar: false
-urxvt*termName: rxvt
-urxvt*pointerBlank: true
-urxvt*perl-lib: /usr/lib/urxvt/perl/
-urxvt*perl-ext-common: default,matcher
-urxvt*urlLauncher: /usr/bin/firefox
+urxvt*colorUL:          #999999
+urxvt*font:             -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+urxvt*boldFont:         -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+!urxvt.font:             xft:DejaVu Sans Mono:pixelsize=14
+!urxvt.boldFont:         xft:DejaVu Sans Mono:bold:pixelsize=14
+urxvt*visualBell:       false
+urxvt*scrollBar:        false
+urxvt*termName:         rxvt
+urxvt*pointerBlank:     true
+urxvt*perl-lib:         /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:  default,matcher
+urxvt*urlLauncher:      /usr/bin/firefox
 ! 1|2|3 = Left|Scroll|Right
-urxvt*matcher.button: 3
+urxvt*matcher.button:   3
 
-!
-! Colors. This is nice because you can keep each theme in its own file, and
+! Thayer's settings that I haven't already robbed :)
+! http://cinderwick.ca
+!urxvt*geometry:           160x50
+!urxvt*internalBorder:     5
+!urxvt*fading:             20
+!urxvt*shading:            80
+!urxvt*tintColor:          #222222
+!urxvt*inheritPixmap:      false
+!urxvt*depth:              24
+!urxvt*depth:              32
+urxvt*saveLines:          32767
+urxvt*scrollTtyKeypress:  true
+urxvt*scrollWithBuffer:   false
+urxvt*scrollTtyOutput:    false
+!urxvt*scrollstyle:        plain
+!urxvt*scrollBar_right:    true
+!urxvt*scrollColor:        #777777
+urxvt*cursorColor:        #7a8b8b
+!urxvt*loginShell:         true
+urxvt*cutchars:           "()*,<>[]{}|'
+urxvt*print-pipe:         cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
+urxvt*secondaryScroll:    true
+urxvt*mapAlert:           true
+urxvt*utmpInhibit:        true
+!urxvt*background:         #191919
+!urxvt*foreground:         #aaaaaa
+
+!xterm*faceName:  xft:DejaVu Sans Mono:pixelsize=13.5
+xterm*font:      -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+xterm*boldFont:  -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+
+! This is nice because you can keep each theme in its own file, and
 ! then just uncomment whichever one you feel like using.
-!
 !#include "/home/andrew/.colors/arthur"
 !#include "/home/andrew/.colors/bright"
 !#include "/home/andrew/.colors/bw"
@@ -48,9 +66,11 @@ urxvt*matcher.button: 3
 !#include "/home/andrew/.colors/erikl"
 !#include "/home/andrew/.colors/lich"
 !#include "/home/andrew/.colors/low"
-#include "/home/andrew/.colors/malarkey"
+!#include "/home/andrew/.colors/malarkey"
 !#include "/home/andrew/.colors/milomouse"
 !#include "/home/andrew/.colors/molokai"
+!#include "/home/andrew/.colors/muted"
+#include "/home/andrew/.colors/mutatis"
 !#include "/home/andrew/.colors/old"
 !#include "/home/andrew/.colors/plan9"
 !#include "/home/andrew/.colors/rab"
