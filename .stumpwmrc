@@ -1,55 +1,32 @@
+; -*-lisp-*-
+; vim:ft=lisp:
 ;
 ; ~/.stumpwmrc
-;
 ; Andrew Antle - http://antlechrist.org/
-;
 ; Based _very_ heavily on the included example configuration file.
-;
-
-;
-; emacs modeline
-;; -*-lisp-*-
-;
-; vim modeline
-;; vim:set ft=lisp:
-;
 
 (in-package :stumpwm)
 
-;
 ;; Change the prefix key from `C-t` to `C-z`.
-;
 (set-prefix-key (kbd "C-z"))
 
-;
 ;; Prompt the user for an interactive command.
-;
 (defcommand colon1 (&optional (initial "")) (:rest)
   (let ((cmd (read-one-line (current-screen) ": " initial)))
     (when cmd
       (eval-command cmd t))))
 
-;
 ;; Launch a terminal.
-;
 (define-key *root-map* (kbd "c") "exec urxvt")
 
-;
 ;; Browse the web.
-;
 ;(define-key *root-map* (kbd "b") "colon1 exec firefox http://www.")
 
-;
 ;; ssh somewhere.
-;
 ;(define-key *root-map* (kbd "C-s") "colon1 exec urxvt -e ssh ")
 
-;
 ;; Lock the screen.
-;
 ;(define-key *root-map* (kbd "C-l") "exec slock")
 
-;
 ;; Define the message window font.
-;
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")

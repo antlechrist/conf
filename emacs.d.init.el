@@ -1,46 +1,32 @@
-;
 ; ~/.emacs.d/init.el
-;
 ; Andrew Antle - http://antlechrist.org/
-;
 
-;
-;; Get rid of annoying GNUisance screen. Is there a way to get rid of the
-;; spam message:
+;; http://stackoverflow.com/questions/144983/how-do-i-make-emacs-start-without-so-much-fanfare
 ;;
-;;     "To find out more about the GNUniverse..."
-;; 
-;; in the bottom status bar? Let me know. <andrew at antlechrist dot org>
-;
+;; C-h d inhibit-startup-echo-area-message
 (setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message "andrew")
 
-;
 ;; Backups are important.
 ;; http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
-;
 (setq backup-directory-alist '(("."."~/.emacs.d/backup")))
 (setq backup-by-copying t)
 (setq delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
       version-control t)
-;
+
 ;; Go
-;
 ;(require 'go-mode-load)
 
-;
 ;; Supercollider
-;
 ;(require 'sclang)
 ;(require 'w3m-load)
 
-;
 ;; SLIME (Superior Lisp Interaction Mode for Emacs)
-;
 ;(setq inferior-lisp-program "/usr/bin/clisp")
 ;(add-to-list 'load-path "~/.emacs.d/slime/")
 ;(require 'slime)
 ;(slime-setup)
 
-(setq column-number-mode t) 
+;(add-to-list 'load-path "~/.emacs.d/colors/")
