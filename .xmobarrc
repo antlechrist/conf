@@ -1,11 +1,12 @@
 Config { font = "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*"
-       , bgColor = "#202020"
+       , bgColor = "#101010"
        , fgColor = "#757575"
-       , position = Top
        , lowerOnStart = True
-       , commands = [ Run Date "%a %b %_d %Y-%m-%d :: %H:%M:%S" "date" 10
-                    , Run StdinReader ]
+       , commands = [ Run Weather "KLUK" ["-t"," <tempF>F"] 36000
+                    , Run Date "%a %b %d %Y-%m-%d :: %H:%M:%S" "date" 10
+                    , Run StdinReader
+                    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %date% "
+       , template = " %StdinReader% }{ %date% ::%KLUK% "
        }
