@@ -1,6 +1,5 @@
 -- ~/.xmonad/xmonad.hs
 -- Andrew Antle - http://antlechrist.org/
---
 
 import XMonad
 import Data.Monoid
@@ -23,7 +22,7 @@ myModMask       = mod4Mask
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
+-- workspace name.  The number of workspaces is determined by the length
 -- of this list.
 --
 -- A tagging example:
@@ -92,12 +91,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
-    -- Toggle the status bar gap
-    -- Use this binding with avoidStruts from Hooks.ManageDocks.
-    -- See also the statusBar function from Hooks.DynamicLog.
-    --
---    , ((modm              , xK_b     ), sendMessage ToggleStruts)
-
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
@@ -159,7 +152,7 @@ myLayout = tiled ||| Mirror tiled ||| Full
 -- Window rules:
 
 -- Execute arbitrary actions and WindowSet manipulations when managing
--- a new window. You can use this to, for example, always float a
+-- a new window.  You can use this to, for example, always float a
 -- particular program, or have a client always appear on a particular
 -- workspace.
 --
@@ -180,8 +173,8 @@ myManageHook = composeAll
 
 -- * EwmhDesktops users should change this to ewmhDesktopsEventHook
 --
--- Defines a custom handler function for X Events. The function should
--- return (All True) if the default handler is to be run afterwards. To
+-- Defines a custom handler function for X Events.  The function should
+-- return (All True) if the default handler is to be run afterwards.  To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
 myEventHook = mempty
@@ -223,7 +216,7 @@ toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 -- Startup hook
 
 -- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q. Used by, e.g., XMonad.Layout.PerWorkspace to initialize
+-- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
@@ -234,10 +227,10 @@ myStartupHook = return ()
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
 -- A structure containing your configuration settings, overriding
--- fields in the default config. Any you don't override, will
+-- fields in the default config.  Any you don't override, will
 -- use the defaults defined in xmonad/XMonad/Config.hs
 --
--- Run xmonad with the settings you specify. No need to modify this.
+-- Run xmonad with the settings you specify.
 --
 myConfig = defaultConfig {
       -- simple stuff
@@ -245,7 +238,6 @@ myConfig = defaultConfig {
         focusFollowsMouse  = myFocusFollowsMouse,
         borderWidth        = myBorderWidth,
         modMask            = myModMask,
---        numlockMask        = myNumlockMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
