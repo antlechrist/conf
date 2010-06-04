@@ -1,26 +1,16 @@
-;
 ; ~/.guile
-;
 ; vim:ft=scheme:
 ;
 ; Andrew Antle - http://antlechrist.org/
-;
 ; Guile initialization file | http://www.gnu.org/software/guile/
 ; Prefer Chicken! BSD licensed, not a GNUisance. http://chicken.wiki.br/
-;
 
-;
 ;; readline
-;
 (use-modules (ice-9 readline))
 	     (activate-readline)
 
-;
-;; simply scheme initialization file
-;
 ;;; simply.scm version 3.13 (8/11/98)
 ;;; (Numbered to agree with berkeley.scm version.)
-
 
 ;;; This file uses Scheme features we don't talk about in _Simply_Scheme_.
 ;;; Read at your own risk.

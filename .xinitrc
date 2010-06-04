@@ -3,7 +3,7 @@
 
 setxkbmap -option ctrl:nocaps
 setxkbmap -option terminate:ctrl_alt_bksp
-xsetroot -solid '#1a1a1a'
+xsetroot -solid '#101010'
 xsetroot -cursor_name left_ptr
 
 # 9wm
@@ -21,6 +21,9 @@ exec dwm >~/log/dwm 2>&1
 
 # rio
 #exec rio -term 9term
+
+# stumpwm
+#exec stumpwm >~/log/stumpwm 2>&1
 
 # wmii
 #until wmii; do :; done >~/log/wmii 2>&1

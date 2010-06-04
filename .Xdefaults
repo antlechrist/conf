@@ -4,12 +4,12 @@
 Xcursor.theme:  Vanilla-DMZ
 Xcursor.size:   22
 
-!Xft.antialias:  true
-!Xft.dpi:        96
+Xft.antialias:  true
+Xft.dpi:        96
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
-!Xft.lcdfilter:  lcddefault
-!Xft.rgba:       rgb
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
 
 urxvt*colorUL:          #999999
 urxvt*font:             -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
@@ -45,7 +45,7 @@ urxvt*scrollTtyOutput:    false
 !urxvt*scrollColor:        #777777
 urxvt*cursorColor:        #7a8b8b
 !urxvt*loginShell:         true
-urxvt*cutchars:           "()*,<>[]{}|'
+urxvt*cutchars:           "()*,<>[]{}|'"
 urxvt*print-pipe:         cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
 urxvt*secondaryScroll:    true
 urxvt*mapAlert:           true
@@ -54,10 +54,32 @@ urxvt*utmpInhibit:        true
 !urxvt*foreground:         #aaaaaa
 
 !xterm*faceName:  xft:DejaVu Sans Mono:pixelsize=13.5
-xterm*font:      -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-xterm*boldFont:  -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+xterm*font:      -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*boldFont:  -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*background: #101010
+xterm*foreground: #aaaaaa
 
-! This is nice because you can keep each theme in its own file, and
+!urxvt*background:  #ffffff
+!urxvt*foreground:  #000000
+!urxvt*color0:      #000000
+!urxvt*color1:      #c00000
+!urxvt*color2:      #008000
+!urxvt*color3:      #808000
+!urxvt*color4:      #0000c0
+!urxvt*color5:      #c000c0
+!urxvt*color6:      #008080
+!urxvt*color7:      #c0c0c0
+!urxvt*color8:      #808080
+!urxvt*color9:      #ff6060
+!urxvt*color10:     #00ff00
+!urxvt*color11:     #ffff00
+!urxvt*color12:     #8080ff
+!urxvt*color13:     #ff40ff
+!urxvt*color14:     #00ffff
+!urxvt*color15:     #ffffff
+!urxvt*cursorColor: Black
+
+! Colors. This is nice because you can keep each theme in its own file, and
 ! then just uncomment whichever one you feel like using.
 !#include "/home/andrew/.colors/arthur"
 !#include "/home/andrew/.colors/bright"

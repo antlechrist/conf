@@ -1,8 +1,5 @@
-#
 # ~/.gtkrc-2.0
-#
 # Andrew Antle - http://antlechrist.org/
-#
 
 gtk-theme-name="Candido"
 gtk-icon-theme-name="Tango"

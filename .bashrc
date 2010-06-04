@@ -1,29 +1,20 @@
-#
 # ~/.bashrc
-#
-# author: Andrew Antle - http://antlechrist.org/
-#
+# Andrew Antle - http://antlechrist.org/
 
-#
 # Test whether we're interactive.
-#
 [ -z "$PS1" ] && return
 
-#
 # Source the private stuff.
 #
 # "I knew Colonel Sanders when he was just a Sargeant."
 # "Oh, I thought you only knew his privates." :)
-#
-. ~/.bashrc.private
+. ~/.bashrc_private
 
-#
 # Exporting these variables makes their values available to other programs.
-#
 export DSSI_PATH=~/lib/dssi:/usr/lib/dssi
 export LADSPA_PATH=~/lib/ladspa:/usr/lib/ladspa
 export LV2_PATH=~/lib/lv2:/usr/lib/lv2
-export EDITOR=vim
+export EDITOR=vi
 export GOARCH=i386
 export GOBIN=~/go/bin
 export GOOS=linux
@@ -35,31 +26,21 @@ export PATH_SLCK=/usr/games:/usr/share/texmf/bin
 export PLAN9=~/plan9
 export PATH=$PATH_ANDY:$PATH_HASK:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK:$PLAN9/bin
 
-#
 # Places
-#
 export html=/home/antlec/public_html
 export backups=/mnt/sdc1/backups
-export music=/home/arch_andrew/music
-export podcasts=/home/arch_andrew/podcasts
 
-#
-# Supposed firefox tweaks to speed it up. I didn't notice a difference
-#
+# Supposed firefox tweaks to speed it up.  I didn't notice a difference
 #export MOZ_DISABLE_PANGO=1
 #export FIREFOX_DSP=none
 
-#
-# My prompts. Keep it simple.
-#
+# My prompts.  Keep it simple.
 export PS1='$ '
 export PS2='> '
 export PS3='> '
 export PS4='+ '
 
-#
 # Setup the titlebar, if we've got one.
-#
 if test "$TERM" = "xterm" -o \
         "$TERM" = "xterm-color" -o \
         "$TERM" = "xterm-256color" -o \
@@ -70,14 +51,11 @@ if test "$TERM" = "xterm" -o \
 	export PROMPT_COMMAND
 fi
 
-#
-# Aliases. Life is too short to type more than you must. Especially when you
-# hunt and peck like me.
-#
+# Aliases.  Life is too short to type more than you must.  Especially when
+# you hunt and peck like me.
 alias amail="mail -f $AMAILBOX"
 alias cd2="cd ../.."
 alias ei="mg"
-alias emacs="/usr/bin/emacs-22.3-no-x11"
 alias gmail="mail -f $GMAILBOX"
 alias grep="grep --color=auto"
 alias la="ls -a"
@@ -89,4 +67,3 @@ alias mi="mid3v2"
 alias startx="startx -- -dpi 96"
 alias t="vi ~/.plan"
 alias tar="bsdtar"
-alias vi="vim"
