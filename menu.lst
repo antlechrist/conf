@@ -1,0 +1,28 @@
+# /boot/grub/menu.lst
+# Andrew Antle - http://antlechrist.org/
+
+timeout  5
+default  0
+
+# (0) Arch Linux
+title   Arch Linux
+root    (hd0,0)
+kernel  /vmlinuz26 root=/dev/sda3 ro
+initrd  /kernel26.img
+
+# (1) Arch Linux
+title   Arch Linux Fallback
+root    (hd0,0)
+kernel  /vmlinuz26 root=/dev/sda3 ro
+initrd  /kernel26-fallback.img
+
+# (2) Slackware
+title   Slackware
+root    (hd1,0)
+kernel  /boot/vmlinuz root=/dev/sdb1 ro
+
+# (3) Haiku
+title Haiku
+rootnoverify (hd1,1)
+makeactive
+chainloader +1
