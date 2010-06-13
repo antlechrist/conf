@@ -7,8 +7,8 @@
 
 (in-package :stumpwm)
 
-;; Change the prefix key from `C-t` to `C-z`.
-(set-prefix-key (kbd "C-z"))
+;; Set the prefix key.
+(set-prefix-key (kbd "C-a"))
 
 ;; Prompt the user for an interactive command.
 (defcommand colon1 (&optional (initial "")) (:rest)
@@ -17,10 +17,11 @@
       (eval-command cmd t))))
 
 ;; Launch a terminal.
-(define-key *root-map* (kbd "c") "exec urxvt")
+(define-key *root-map* (kbd "c")   "exec urxvt")
+(define-key *root-map* (kbd "C-c") "exec urxvt")
 
 ;; Browse the web.
-;(define-key *root-map* (kbd "b") "colon1 exec firefox http://www.")
+(define-key *root-map* (kbd "b") "exec firefox")
 
 ;; ssh somewhere.
 ;(define-key *root-map* (kbd "C-s") "colon1 exec urxvt -e ssh ")
@@ -30,3 +31,5 @@
 
 ;; Define the message window font.
 (set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
+
+; How to quit: C-; quit
