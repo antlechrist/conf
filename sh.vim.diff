@@ -1,0 +1,19 @@
+--- /usr/local/share/vim/vim72/syntax/sh.vim	2010-05-27 23:58:34.466336677 -0400
++++ .vim/syntax/sh.vim	2010-06-16 04:32:29.015911680 -0400
+@@ -232,13 +232,9 @@
+ " (ie. Posix compliant shell).  /bin/ksh should work for those
+ " systems too, however, so the following syntax will flag $(..) as
+ " an Error under /bin/sh.  By consensus of vimdev'ers!
+-if exists("b:is_kornshell") || exists("b:is_bash")
+- syn region shCommandSub matchgroup=shCmdSubRegion start="\$("  skip='\\\\\|\\.' end=")"  contains=@shCommandSubList
+- syn region shArithmetic matchgroup=shArithRegion  start="\$((" skip='\\\\\|\\.' end="))" contains=@shArithList
+- syn match  shSkipInitWS contained	"^\s\+"
+-else
+- syn region shCommandSub matchgroup=Error start="\$(" end=")" contains=@shCommandSubList
+-endif
++syn region shCommandSub matchgroup=shCmdSubRegion start="\$("  skip='\\\\\|\\.' end=")"  contains=@shCommandSubList
++syn region shArithmetic matchgroup=shArithRegion  start="\$((" skip='\\\\\|\\.' end="))" contains=@shArithList
++syn match  shSkipInitWS contained	"^\s\+"
+ 
+ if exists("b:is_bash")
+  syn cluster shCommandSubList add=bashSpecialVariables,bashStatement
