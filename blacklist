@@ -1,0 +1,58 @@
+# This is a blacklist file. Any packages listed here won't be
+# upgraded, removed, or installed by slackpkg.
+#
+# The correct syntax is:
+#
+# To blacklist the package xorg-server-1.6.3-x86_64-1 the line will be:
+# xorg-server
+#
+# DON'T put any blank line(s) or any space(s) before or after the package name.
+# If you do this, the blacklist will NOT work.
+#
+# Automated upgrade of kernel packages aren't a good idea (and you need to
+# run "lilo" after upgrade). If you think the same, uncomment the lines
+# below 
+#
+#kernel-firmware
+#kernel-generic
+#kernel-generic-smp
+#kernel-headers
+#kernel-huge
+#kernel-huge-smp
+#kernel-modules
+#kernel-modules-smp
+#kernel-source
+
+# aaa_elflibs can't be updated.
+aaa_elflibs
+
+# Now we can blacklist whole directories
+# The versions of xf86-video-intel inside that dir conflicts with
+# Slackware 13.0's default xf86-video-intel (in /slackware).
+/extra/xf86-video-intel-alternate
+
+# local
+alpine
+elm
+elvis
+geeqie
+gftp
+hplip
+iw
+iwlwifi-1000
+iwlwifi-3945
+iwlwifi-4965
+iwlwifi-5000
+iwlwifi-5150
+iwlwifi-6000
+joe
+jove
+mc
+mozilla-thunderbird
+netatalk
+newspost
+pan
+seamonkey
+tin
+xpaint
+xpdf

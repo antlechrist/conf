@@ -50,8 +50,8 @@ urxvt*print-pipe:         cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
 urxvt*secondaryScroll:    true
 urxvt*mapAlert:           true
 urxvt*utmpInhibit:        true
-!urxvt*background:         #191919
-!urxvt*foreground:         #aaaaaa
+urxvt*background:         #191919
+urxvt*foreground:         #aaaaaa
 
 !xterm*faceName:   xft:DejaVu Sans Mono:pixelsize=12
 xterm*font:       -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
