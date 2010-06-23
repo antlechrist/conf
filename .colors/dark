@@ -1,10 +1,10 @@
 ! author: jason ryan - http://jasonwryan.com/
 ! vim:ft=xdefaults:
 
-URxvt.background: #1a1a1a
-URxvt.foreground: #999999
-URxvt.cursorColor: #5e468c
-!URxvt.cursorBlink: true
+*.background: #1a1a1a
+*.foreground: #999999
+*.cursorColor: #5e468c
+!*.cursorBlink: true
 *color0: #333333
 *color1: #8c4665
 *color2: #287373

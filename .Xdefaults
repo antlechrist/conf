@@ -50,12 +50,12 @@ urxvt*print-pipe:         cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
 urxvt*secondaryScroll:    true
 urxvt*mapAlert:           true
 urxvt*utmpInhibit:        true
-urxvt*background:         #191919
+urxvt*background:         #101010
 urxvt*foreground:         #aaaaaa
 
 !xterm*faceName:   xft:DejaVu Sans Mono:pixelsize=12
-xterm*font:       -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*boldFont:   -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*font:       -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+xterm*boldFont:   -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
 !xterm*background: #030303
 !xterm*foreground: #a3a3a3
 
@@ -64,7 +64,7 @@ xterm*boldFont:   -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
 !#include "/home/andrew/.colors/arthur"
 !#include "/home/andrew/.colors/bright"
 !#include "/home/andrew/.colors/bw"
-!#include "/home/andrew/.colors/dark"
+#include "/home/andrew/.colors/dark"
 !#include "/home/andrew/.colors/erikl"
 !#include "/home/andrew/.colors/gloom"
 !#include "/home/andrew/.colors/lich"
@@ -73,7 +73,7 @@ xterm*boldFont:   -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
 !#include "/home/andrew/.colors/milomouse"
 !#include "/home/andrew/.colors/molokai"
 !#include "/home/andrew/.colors/muted"
-#include "/home/andrew/.colors/mutatis"
+!#include "/home/andrew/.colors/mutatis"
 !#include "/home/andrew/.colors/old"
 !#include "/home/andrew/.colors/plan9"
 !#include "/home/andrew/.colors/rab"

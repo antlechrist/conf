@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 
 /* Commands */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[]  = { "urxvt",     NULL };
+static const char *termcmd[]  = { "uxterm",    NULL };
 
 static Key keys[] = {
 	/* Modifier          Key         Function         Argument */
