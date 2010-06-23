@@ -16,12 +16,12 @@ export GOARCH=i386
 export GOBIN=~/go/bin
 export GOOS=linux
 export GOROOT=~/go
-export MANPATH="/home/andrew/man:/usr/local/man:/usr/man"
+export MANPATH=~/man:/usr/local/man:/usr/man
 export MANWIDTH=80
 export PATH_ANDY=~/bin:/usr/local/bin
 export PATH_SLCK=/usr/games:/usr/share/texmf/bin
 export PLAN9=~/plan9
-export PATH=$PATH_ANDY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK:$PLAN9/bin
+export PATH=$PATH_ANDY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK
 
 # XDG crap.
 export XDG_CACHE_HOME=~/.xdg/cache
