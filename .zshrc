@@ -1,47 +1,70 @@
-#
 # ~/.zshrc
-#
 # Andrew Antle - http://antlechrist.org/
+
+# Source the private stuff.
 #
+# "I knew Colonel Sanders when he was just a Sargeant."
+# "Oh, I thought you only knew his privates." :)
+. ~/.private
 
-DSSI_PATH=~/lib/dssi:/usr/lib/dssi
-LADSPA_PATH=~/lib/ladspa:/usr/lib/ladspa
-LV2_PATH=~/lib/lv2:/usr/lib/lv2
-EDITOR=vi
-GOARCH=386
-GOBIN=~/.go/bin
-GOOS=linux
-GOROOT=~/.go
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-LC_COLLATE=C
-PLAN9=/usr/local/plan9
-PATH_ANDY=~/bin:/usr/local/bin
-PATH_HASK=~/.cabal/bin
-PATH_PERL=/usr/bin/perlbin/core
-PATH_RUBY=~/.gem/ruby/1.9.1/bin
-PATH_SBCL=~/.sbcl/bin
-PATH=$PATH_ANDY:$PATH_HASK:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_PERL:$PLAN9/bin
-PS1="%n@%m:%1~%# "
+# Exporting these variables makes their values available to other programs.
+export EDITOR=vi
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+export LC_COLLATE=C
+export MANPATH=~/man:/usr/local/man:/usr/man
+export MANWIDTH=80
+export PLAN9=~/plan9
+export PATH_ANDY=~/bin:/usr/local/bin
+export PATH_HASK=~/.cabal/bin
+export PATH_SLCK=/usr/games:/usr/share/texmf/bin
+export PATH=$PATH_ANDY:$PATH_HASK:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK
 
-export LC_COLLATE
+# XDG crap.
+export XDG_CACHE_HOME=~/.xdg/cache
+export XDG_CONFIG_HOME=~/.xdg/config
+export XDG_DATA_HOME=~/.xdg/share
+export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_DATA_DIRS=/usr/share:/usr/local/share
 
-alias cd2='cd ../..'
-alias grep='grep --color=auto'
-alias la='ls -a'
-alias lh='ls -lh'
-alias ll='ls -l'
-alias ls='ls -F --color=auto --group-directories-first'
-alias lsd='ls /var/run/daemons'
-alias mem='free -m'
-alias mi='mid3v2'
-alias mkdir='mkdir -p'
-alias mksl='sudo make install clean'
-alias pSyu='sudo pacman -Syu'
-alias ps='ps -e'
-alias startx='startx -- -dpi 96'
-alias t="vim ~/.todo.txt"
+# Places.
+export b=/mnt/sdc1/backups
+export h=/home/antlec/public_html
+export p=/mnt/sdb4/podcasts
+export sb=/mnt/sdb4/pub/slackware/slackbuilds/13.1/
+
+# Unset things which annoy me on Slackware, but which others find useful
+# and/or necessary.
+unset JAVA_HOME
+unset KDEDIRS
+
+# My prompts. Keep it simple.
+export PS1='$ '
+export PS2='> '
+export PS3='> '
+export PS4='+ '
+
+alias amail="mail -f $AMAILBOX"
+alias cd2="cd ../.."
+alias ei="mg"
+alias gmail="mail -f $GMAILBOX"
+alias grep="grep --color=auto"
+alias la="ls -a"
+alias lh="ls -lh"
+alias ll="ls -l"
+alias ls="ls -F --color=auto --group-directories-first"
+alias mem="free -m"
+alias mi="mid3v2"
+alias mksl="sudo make install clean"
+alias startx="startx -- -dpi 96"
+alias t="vi ~/.plan"
+alias tar="bsdtar"
+
+# Pkgtools
+alias ipkg="sudo installpkg"
+alias rpkg="sudo removepkg"
+alias upkg="sudo upgradepkg"
 
 setopt appendhistory autocd extendedglob
 unsetopt beep
@@ -59,7 +82,7 @@ autoload -Uz compinit
 compinit
 
 case $TERM in
-	rxvt*)
+	*xterm*|rxvt*)
 		precmd () {print -Pn "\e]0;%n@%m:%~\a"}
 		;;
 esac
