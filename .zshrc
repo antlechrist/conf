@@ -32,7 +32,9 @@ export XDG_DATA_DIRS=/usr/share:/usr/local/share
 export b=/mnt/sdc1/backups
 export h=/home/antlec/public_html
 export p=/mnt/sdb4/podcasts
+export m=/mnt/sdb4/music
 export sb=/mnt/sdb4/pub/slackware/slackbuilds/13.1/
+export sw=/mnt/sdb4/pub/slackware/slackware-13.1
 
 # Unset things which annoy me on Slackware, but which others find useful
 # and/or necessary.
@@ -71,9 +73,31 @@ unsetopt beep
 
 bindkey -e
 
+# rxvt-unicode
+#bindkey "\e[7~" beginning-of-line
+#bindkey "\e[8~" end-of-line
+# xterm
+#bindkey "\eOH" beginning-of-line
+#bindkey "\eOF" end-of-line
+#
+# Find out what them keys mean!
+# -----------------------------
+# Type `C-v`, which is a binding to `quoted-insert`, and then the key of
+# which you'd like to see the actual value. E.g.,
+#
+#     C-v [Home]
+# 
+# outputs `^[[H`. `^[` is a literal [Esc] keypress. In inputrc syntax, [Esc]
+# is expressed with `\e`. Voila! `\e[H`.
+#
+# Reference
+# ---------
+# <http://wiki.archlinux.org/index.php/Why_don't_my_Home_and_End_keys_work_in_terminals%3F>
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+bindkey "\e[5~" beginning-of-history
+bindkey "\e[6~" end-of-history
 bindkey "\e[3~" delete-char
-bindkey "\e[8~" end-of-line
-bindkey "\e[7~" beginning-of-line
 bindkey '^i' expand-or-complete-prefix
 
 zstyle :compinstall filename '/home/andrew/.zshrc'
