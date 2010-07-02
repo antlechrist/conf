@@ -23,7 +23,7 @@ augroup vimrcEx
 au!
 autocmd FileType text setlocal textwidth=78
 autocmd FileType haskell setlocal tw=78 ts=4 sw=4 et
-autocmd FileType html setlocal ts=2 sw=2 et
+autocmd FileType html setlocal ts=1 sw=1 tw=78
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
