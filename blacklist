@@ -33,18 +33,19 @@ aaa_elflibs
 
 # local
 alpine
+amp
 elm
 elvis
 geeqie
 gftp
 hplip
 iw
-iwlwifi-1000
+iwlwifi-1000-ucode
 iwlwifi-3945
 iwlwifi-4965
 iwlwifi-5000
 iwlwifi-5150
-iwlwifi-6000
+iwlwifi-6000-ucode
 joe
 jove
 mc

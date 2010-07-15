@@ -1,8 +1,7 @@
 ! Mutatis
-! Andrew Antle - http://antlechrist.org/
 ! vim:ft=xdefaults:
 
-*background: #1a1a1a
+*background: #101010
 *foreground: #999999
 ! Black
 *color0:     #030303
