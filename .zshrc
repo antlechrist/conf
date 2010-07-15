@@ -15,11 +15,12 @@ export SAVEHIST=1000
 export LC_COLLATE=C
 export MANPATH=~/man:/usr/local/man:/usr/man
 export MANWIDTH=80
-export PLAN9=~/plan9
+#export PLAN9=~/plan9
 export PATH_ANDY=~/bin:/usr/local/bin
-export PATH_HASK=~/.cabal/bin
+#export PATH_HASK=~/.cabal/bin
+export PATH_RUBY=~/.gem/ruby/1.9.1/bin
 export PATH_SLCK=/usr/games:/usr/share/texmf/bin
-export PATH=$PATH_ANDY:$PATH_HASK:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK
+export PATH=$PATH_ANDY:$PATH_RUBY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK
 
 # XDG crap.
 export XDG_CACHE_HOME=~/.xdg/cache
@@ -31,9 +32,11 @@ export XDG_DATA_DIRS=/usr/share:/usr/local/share
 # Places.
 export b=/mnt/sdc1/backups
 export h=/home/antlec/public_html
-export p=/mnt/sdb4/podcasts
+export l=/mnt/sdb4/doc
 export m=/mnt/sdb4/music
-export sb=/mnt/sdb4/pub/slackware/slackbuilds/13.1/
+export p=/mnt/sdb4/podcasts
+export sb=/mnt/sdb4/pub/slackware/slackbuilds/13.1
+export src=/mnt/sdb4/pub/src
 export sw=/mnt/sdb4/pub/slackware/slackware-13.1
 
 # Unset things which annoy me on Slackware, but which others find useful
@@ -59,9 +62,20 @@ alias ls="ls -F --color=auto --group-directories-first"
 alias mem="free -m"
 alias mi="mid3v2"
 alias mksl="sudo make install clean"
+alias srv="python3 -m http.server"
 alias startx="startx -- -dpi 96"
 alias t="vi ~/.plan"
 alias tar="bsdtar"
+
+# Mounting stuff.
+# 8-track
+alias m-br864="mount -L BR864"
+alias u-br864="umount /media/BR864"
+export ROLAND=/media/BR864/ROLAND/USB
+# Sansa Clip+
+alias m-clip1="mount -L CLIP1"
+alias u-clip1="umount /media/CLIP1"
+export CLIP1M=/media/CLIP1/MUSIC
 
 # Pkgtools
 alias ipkg="sudo installpkg"
@@ -104,6 +118,12 @@ zstyle :compinstall filename '/home/andrew/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+case `tty` in
+*/pts/*)
+	export TERM=xterm-256color
+	;;
+esac
 
 case $TERM in
 	*xterm*|rxvt*)

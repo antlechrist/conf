@@ -13,7 +13,7 @@ set incsearch
 set listchars=tab:>-
 set list
 set noexpandtab
-set nonumber
+set number
 set spelllang=en_us
 set nospell
 set mouse=a
@@ -24,6 +24,7 @@ au!
 autocmd FileType text setlocal textwidth=78
 autocmd FileType haskell setlocal tw=78 ts=4 sw=4 et
 autocmd FileType html setlocal ts=1 sw=1 tw=78
+autocmd FileType python setlocal ai sw=4 ts=4 et
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
@@ -33,3 +34,4 @@ augroup END
 " Select a block of text and auto-fill to textwidth.
 map Q gq
 syntax on
+colo molokai

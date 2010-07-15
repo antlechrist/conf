@@ -5,11 +5,11 @@ Xcursor.theme:  Vanilla-DMZ
 Xcursor.size:   22
 
 Xft.antialias:  true
-Xft.dpi:        96
+!Xft.dpi:        96
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcddefault
-Xft.rgba:       rgb
+!Xft.lcdfilter:  lcddefault
+!Xft.rgba:       rgb
 
 urxvt*colorUL:          #999999
 urxvt*font:             -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
@@ -54,24 +54,24 @@ urxvt*background:         #101010
 urxvt*foreground:         #aaaaaa
 
 !xterm*faceName:   xft:DejaVu Sans Mono:pixelsize=12
-xterm*font:       -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-xterm*boldFont:   -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-!xterm*background: #030303
-!xterm*foreground: #a3a3a3
+xterm*font:       -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*boldFont:   -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*background: #1a1a1a
+xterm*foreground: #a1a1a1
 
 ! Colors.  This is nice because you can keep each theme in its own file, and
 ! then just uncomment whichever one you feel like using.
 !#include "/home/andrew/.colors/arthur"
 !#include "/home/andrew/.colors/bright"
 !#include "/home/andrew/.colors/bw"
-#include "/home/andrew/.colors/dark"
+!#include "/home/andrew/.colors/dark"
 !#include "/home/andrew/.colors/erikl"
 !#include "/home/andrew/.colors/gloom"
 !#include "/home/andrew/.colors/lich"
 !#include "/home/andrew/.colors/low"
 !#include "/home/andrew/.colors/malarkey"
 !#include "/home/andrew/.colors/milomouse"
-!#include "/home/andrew/.colors/molokai"
+#include "/home/andrew/.colors/molokai"
 !#include "/home/andrew/.colors/muted"
 !#include "/home/andrew/.colors/mutatis"
 !#include "/home/andrew/.colors/old"
