@@ -21,10 +21,13 @@ set mouse=a
 filetype plugin indent on
 augroup vimrcEx
 au!
-autocmd FileType text setlocal textwidth=78
-autocmd FileType haskell setlocal tw=78 ts=4 sw=4 et
-autocmd FileType html setlocal ts=1 sw=1 tw=78
+"autocmd FileType cpp setlocal sw=2 ts=2 tw=80 et
+autocmd FileType haskell setlocal sw=4 ts=4 tw=78 et
+autocmd FileType html setlocal et sw=2 ts=2 tw=78
+autocmd FileType javascript setlocal cindent et sw=2 ts=2 tw=78
 autocmd FileType python setlocal ai sw=4 ts=4 et
+autocmd FileType ruby setlocal sw=2 ts=2 et
+autocmd FileType text setlocal tw=70
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |

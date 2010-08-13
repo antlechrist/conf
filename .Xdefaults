@@ -12,8 +12,8 @@ Xft.hintstyle:  hintslight
 !Xft.rgba:       rgb
 
 urxvt*colorUL:          #999999
-urxvt*font:             -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
-urxvt*boldFont:         -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+urxvt*font:             -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+urxvt*boldFont:         -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
 !urxvt.font:             xft:DejaVu Sans Mono:pixelsize=14
 !urxvt.boldFont:         xft:DejaVu Sans Mono:bold:pixelsize=14
 urxvt*visualBell:       false

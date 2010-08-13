@@ -15,11 +15,11 @@ export SAVEHIST=1000
 export LC_COLLATE=C
 export MANPATH=~/man:/usr/local/man:/usr/man
 export MANWIDTH=80
-#export PLAN9=~/plan9
+export PLAN9=/usr/local/plan9
 export PATH_ANDY=~/bin:/usr/local/bin
 #export PATH_HASK=~/.cabal/bin
 export PATH_RUBY=~/.gem/ruby/1.9.1/bin
-export PATH_SLCK=/usr/games:/usr/share/texmf/bin
+export PATH_SLCK=/usr/games:~/.texlive/2009/bin/i386-linux
 export PATH=$PATH_ANDY:$PATH_RUBY:/bin:/usr/bin:/sbin:/usr/sbin:$PATH_SLCK
 
 # XDG crap.
@@ -30,13 +30,16 @@ export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_DATA_DIRS=/usr/share:/usr/local/share
 
 # Places.
-export b=/mnt/sdc1/backups
+export b=/mnt/sda1/backups
+export b_prm=/mnt/sdc1/backups
 export h=/home/antlec/public_html
 export l=/mnt/sdb4/doc
 export m=/mnt/sdb4/music
 export p=/mnt/sdb4/podcasts
+export pw=/home/antlec/public_html/probablyworse
 export sb=/mnt/sdb4/pub/slackware/slackbuilds/13.1
 export src=/mnt/sdb4/pub/src
+export staging=/mnt/sda1/staging
 export sw=/mnt/sdb4/pub/slackware/slackware-13.1
 
 # Unset things which annoy me on Slackware, but which others find useful
@@ -60,12 +63,13 @@ alias lh="ls -lh"
 alias ll="ls -l"
 alias ls="ls -F --color=auto --group-directories-first"
 alias mem="free -m"
-alias mi="mid3v2"
+alias mi="mutagen-inspect"
 alias mksl="sudo make install clean"
 alias srv="python3 -m http.server"
 alias startx="startx -- -dpi 96"
 alias t="vi ~/.plan"
 alias tar="bsdtar"
+alias vbox="/opt/VirtualBox/VirtualBox"
 
 # Mounting stuff.
 # 8-track
@@ -101,12 +105,11 @@ bindkey -e
 #
 #     C-v [Home]
 # 
-# outputs `^[[H`. `^[` is a literal [Esc] keypress. In inputrc syntax, [Esc]
-# is expressed with `\e`. Voila! `\e[H`.
+# outputs `^[[H`. `^[` is a literal [Esc] keypress. In inputrc syntax,
+# [Esc] is expressed with `\e`. Voila! `\e[H`.
 #
 # Reference
 # ---------
-# <http://wiki.archlinux.org/index.php/Why_don't_my_Home_and_End_keys_work_in_terminals%3F>
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 bindkey "\e[5~" beginning-of-history
