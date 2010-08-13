@@ -5,7 +5,7 @@
 
 setxkbmap -option ctrl:nocaps
 setxkbmap -option terminate:ctrl_alt_bksp
-xsetroot -solid '#222222'
+xsetroot -solid '#111111'
 xsetroot -cursor_name left_ptr
 
 firefox >~/log/firefox 2>&1 &
