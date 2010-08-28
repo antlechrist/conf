@@ -9,6 +9,8 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 import XMonad.Hooks.DynamicLog
+import XMonad.Prompt
+import XMonad.Prompt.RunOrRaise
 
 -- No more talkin', just bring it on!
 terminal'           = "uxterm"
@@ -23,7 +25,7 @@ focusedBorderColor' = "#222222"
 keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     , ((modm,               xK_p     ), spawn "dmenu_run")
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modm .|. shiftMask, xK_p     ), runOrRaisePrompt andrewXPConfig)
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
@@ -57,41 +59,53 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
 
 layout' = tiled ||| Mirror tiled ||| Full
-  where
-     tiled   = Tall nmaster delta ratio
-     nmaster = 1
-     ratio   = 1/2
-     delta   = 3/100
+    where
+        tiled   = Tall nmaster delta ratio
+        nmaster = 1
+        ratio   = 1/2
+        delta   = 3/100
 
 bar'  = "xmobar"
-myPP  = xmobarPP { ppCurrent = xmobarColor "#cdcdc1" "#222222" . pad
-                 , ppHidden  = xmobarColor "#999999" "" . pad
-                 , ppHiddenNoWindows = showNamedWorkspaces
-                 , ppUrgent  = id
-                 , ppSep     = " : "
-                 , ppWsSep   = " "
-                 , ppTitle   = shorten 80
-                 , ppLayout  = id
-                 , ppOrder   = id
-                 , ppOutput  = putStrLn
-                 , ppExtras  = []
-                 }
-  where showNamedWorkspaces wsId = if any (`elem` wsId) ['1'..'9']
+myPP  = xmobarPP
+    { ppCurrent = xmobarColor "#cdcdc1" "#222222" . pad
+    , ppHidden  = xmobarColor "#999999" "" . pad
+    , ppHiddenNoWindows = showNamedWorkspaces
+    , ppUrgent  = id
+    , ppSep     = " : "
+    , ppWsSep   = " "
+    , ppTitle   = shorten 80
+    , ppLayout  = id
+    , ppOrder   = id
+    , ppOutput  = putStrLn
+    , ppExtras  = []
+    }
+    where showNamedWorkspaces wsId = if any (`elem` wsId) ['1'..'9']
                                          then pad wsId
                                          else ""
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
+andrewXPConfig = defaultXPConfig
+    { font        = "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*"
+    , bgColor     = "#101010"
+    , fgColor     = "#757575"
+    , bgHLight    = "#222222"
+    , fgHLight    = "#999999"
+    , borderColor = "#1a1a1a"
+    , position    = Top
+    }
+
 main = xmonad =<< statusBar bar' myPP toggleStrutsKey config'
 -- Override defaults defined in xmonad/XMonad/Config.hs
-config' = defaultConfig { terminal           = terminal'
-                        , focusFollowsMouse  = focusFollowsMouse'
-                        , borderWidth        = borderWidth'
-                        , modMask            = modMask'
-                        , workspaces         = workspaces'
-                        , normalBorderColor  = normalBorderColor'
-                        , focusedBorderColor = focusedBorderColor'
-                        , keys               = keys'
-                        , mouseBindings      = mouseBindings'
-                        , layoutHook         = layout'
-                        }
+config' = defaultConfig
+    { terminal           = terminal'
+    , focusFollowsMouse  = focusFollowsMouse'
+    , borderWidth        = borderWidth'
+    , modMask            = modMask'
+    , workspaces         = workspaces'
+    , normalBorderColor  = normalBorderColor'
+    , focusedBorderColor = focusedBorderColor'
+    , keys               = keys'
+    , mouseBindings      = mouseBindings'
+    , layoutHook         = layout'
+    }
