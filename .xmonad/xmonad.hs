@@ -12,7 +12,6 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Prompt
 import XMonad.Prompt.RunOrRaise
 
--- No more talkin', just bring it on!
 terminal'           = "uxterm"
 focusFollowsMouse' :: Bool
 focusFollowsMouse'  = True
@@ -24,8 +23,8 @@ focusedBorderColor' = "#222222"
 
 keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm,               xK_p     ), spawn "dmenu_run")
-    , ((modm .|. shiftMask, xK_p     ), runOrRaisePrompt andrewXPConfig)
+    , ((modm,               xK_p     ), runOrRaisePrompt andrewXPConfig)
+    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
@@ -66,7 +65,7 @@ layout' = tiled ||| Mirror tiled ||| Full
         delta   = 3/100
 
 bar'  = "xmobar"
-myPP  = xmobarPP
+andrewPP  = xmobarPP
     { ppCurrent = xmobarColor "#cdcdc1" "#222222" . pad
     , ppHidden  = xmobarColor "#999999" "" . pad
     , ppHiddenNoWindows = showNamedWorkspaces
@@ -95,8 +94,8 @@ andrewXPConfig = defaultXPConfig
     , position    = Top
     }
 
-main = xmonad =<< statusBar bar' myPP toggleStrutsKey config'
--- Override defaults defined in xmonad/XMonad/Config.hs
+main = xmonad =<< statusBar bar' andrewPP toggleStrutsKey config'
+
 config' = defaultConfig
     { terminal           = terminal'
     , focusFollowsMouse  = focusFollowsMouse'
