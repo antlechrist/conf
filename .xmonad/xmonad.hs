@@ -11,20 +11,30 @@ import qualified Data.Map        as M
 import XMonad.Hooks.DynamicLog
 import XMonad.Prompt
 import XMonad.Prompt.RunOrRaise
+import XMonad.Layout.SimplestFloat
 
-terminal'           = "uxterm"
-focusFollowsMouse' :: Bool
-focusFollowsMouse'  = True
-borderWidth'        = 1
-modMask'            = mod4Mask
-workspaces'         = ["1","2","3","4","5","6","7","8","9"]
+workspaces' = ["1","2","3","4","5","6","7","8","9"]
+modMask' = mod4Mask
+borderWidth' = 1
 normalBorderColor'  = "#1a1a1a"
 focusedBorderColor' = "#222222"
+
+layout' = tiled ||| Mirror tiled ||| Full ||| simplestFloat
+    where
+        tiled   = Tall nmaster delta ratio
+        nmaster = 1
+        ratio   = 1/2
+        delta   = 3/100
+
+manage' = composeAll
+    [ className =? "Firefox" --> doShift "9" ]
+
+terminal' = "uxterm"
+focusFollowsMouse' = True
 
 keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     , ((modm,               xK_p     ), runOrRaisePrompt andrewXPConfig)
-    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
@@ -57,14 +67,8 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-layout' = tiled ||| Mirror tiled ||| Full
-    where
-        tiled   = Tall nmaster delta ratio
-        nmaster = 1
-        ratio   = 1/2
-        delta   = 3/100
+bar' = "xmobar"
 
-bar'  = "xmobar"
 andrewPP  = xmobarPP
     { ppCurrent = xmobarColor "#cdcdc1" "#222222" . pad
     , ppHidden  = xmobarColor "#999999" "" . pad
@@ -107,4 +111,5 @@ config' = defaultConfig
     , keys               = keys'
     , mouseBindings      = mouseBindings'
     , layoutHook         = layout'
+    , manageHook         = manage'
     }
