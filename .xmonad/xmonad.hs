@@ -9,15 +9,13 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 import XMonad.Hooks.DynamicLog
-import XMonad.Prompt
-import XMonad.Prompt.RunOrRaise
 import XMonad.Layout.SimplestFloat
 
 workspaces' = ["1","2","3","4","5","6","7","8","9"]
 modMask' = mod4Mask
 borderWidth' = 1
 normalBorderColor'  = "#1a1a1a"
-focusedBorderColor' = "#222222"
+focusedBorderColor' = "#303030"
 
 layout' = tiled ||| Mirror tiled ||| Full ||| simplestFloat
     where
@@ -27,14 +25,14 @@ layout' = tiled ||| Mirror tiled ||| Full ||| simplestFloat
         delta   = 3/100
 
 manage' = composeAll
-    [ className =? "Firefox" --> doShift "9" ]
+    [ className =? "Chromium" --> doShift "9" ]
 
 terminal' = "uxterm"
 focusFollowsMouse' = True
 
 keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm,               xK_p     ), runOrRaisePrompt andrewXPConfig)
+    , ((modm,               xK_p     ), spawn "dmenu.sh")
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
@@ -68,8 +66,7 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
 
 bar' = "xmobar"
-
-andrewPP  = xmobarPP
+xmobarPP' = xmobarPP
     { ppCurrent = xmobarColor "#cdcdc1" "#222222" . pad
     , ppHidden  = xmobarColor "#999999" "" . pad
     , ppHiddenNoWindows = showNamedWorkspaces
@@ -83,22 +80,12 @@ andrewPP  = xmobarPP
     , ppExtras  = []
     }
     where showNamedWorkspaces wsId = if any (`elem` wsId) ['1'..'9']
-                                         then pad wsId
-                                         else ""
+                                     then pad wsId
+                                     else ""
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
-andrewXPConfig = defaultXPConfig
-    { font        = "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*"
-    , bgColor     = "#101010"
-    , fgColor     = "#757575"
-    , bgHLight    = "#222222"
-    , fgHLight    = "#999999"
-    , borderColor = "#1a1a1a"
-    , position    = Top
-    }
-
-main = xmonad =<< statusBar bar' andrewPP toggleStrutsKey config'
+main = xmonad =<< statusBar bar' xmobarPP' toggleStrutsKey config'
 
 config' = defaultConfig
     { terminal           = terminal'
